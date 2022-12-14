@@ -8,10 +8,13 @@ import sitemap from '@astrojs/sitemap';
 import image from '@astrojs/image';
 import mdx from '@astrojs/mdx';
 import partytown from '@astrojs/partytown';
+import storyblok from '@storyblok/astro';
+import { loadEnv } from 'vite';
 
 import { remarkReadingTime } from './src/utils/frontmatter.js';
 
 import { SITE } from './src/config.mjs';
+const env = loadEnv(import.meta.env.MODE, process.cwd(), 'STORYBLOK');
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -35,10 +38,20 @@ export default defineConfig({
 			serviceEntryPoint: '@astrojs/image/sharp',
 		}),
 		mdx(),
-
-		/* Disable this integration if you don't use Google Analytics (or other external script). */
-		partytown({
-			config: { forward: ['dataLayer.push'] },
+		storyblok({
+			accessToken: import.meta.env.MODE === 'development' ? env.STORYBLOK_PREVIEW_TOKEN : env.STORYBLOK_PUBLIC_TOKEN,
+			components: {
+				// Add your components here
+				blogPost: 'storyblok/BlogPost',
+				blogPostList: 'storyblok/BlogPostList',
+				page: 'storyblok/Page',
+				teaser: 'storyblok/Teaser',
+				hero: 'components/widgets/Hero',
+				keynoteSpeakers: 'components/widgets/KeynoteSpeakers',
+				comitteeMembers: 'components/widgets/ComitteeMembers',
+				keyDates: 'components/widgets/KeyDates'
+			},
+			apiOptions: {},
 		}),
 	],
 

@@ -1,0 +1,25 @@
+---
+import Picture from '~/components/core/Picture.astro';
+import { storyblokEditable} from '@storyblok/astro'
+import KeyDate from './KeyDate.astro';
+const { blok } = Astro.props
+const {dates} = blok
+---
+
+<section class="px-4 py-16 sm:px-6 mx-auto lg:px-8 lg:py-20 max-w-6xl" {...storyblokEditable(blok)} id={blok.component}>
+	<div class="grid gap-6 row-gap-10 md:grid-cols-1">
+		<div class="md:pb-6 md:pr-16">
+			<h2 class="mb-8 text-3xl lg:text-4xl font-bold font-heading">
+				Key dates
+			</h2>
+
+			{dates.map(({name, date}, index) => {
+				
+				if (index + 1 === dates.length) return <KeyDate name={name} date={date} last={true} />
+				
+				return <KeyDate name={name} date={date} />
+				
+			})}
+		</div>
+	</div>
+</section>
