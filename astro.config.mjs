@@ -49,7 +49,8 @@ export default defineConfig({
 				hero: 'components/widgets/Hero',
 				keynoteSpeakers: 'components/widgets/KeynoteSpeakers',
 				comitteeMembers: 'components/widgets/ComitteeMembers',
-				keyDates: 'components/widgets/KeyDates'
+				keyDates: 'components/widgets/KeyDates',
+				organizers: 'components/widgets/Organizers'
 			},
 			apiOptions: {},
 		}),
