@@ -50,7 +50,8 @@ export default defineConfig({
 				keynoteSpeakers: 'components/widgets/KeynoteSpeakers',
 				comitteeMembers: 'components/widgets/ComitteeMembers',
 				keyDates: 'components/widgets/KeyDates',
-				organizers: 'components/widgets/Organizers'
+				organizers: 'components/widgets/Organizers',
+				callForPapers: 'components/widgets/CallForPapers'
 			},
 			apiOptions: {},
 		}),

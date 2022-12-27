@@ -1,0 +1,15 @@
+---
+import { Icon } from 'astro-icon';
+
+const {
+	label = 'Toggle between Dark and Light mode',
+	class:
+		className = 'btn btn-primary sm:mb-0 w-full',
+	iconClass = 'w-6 h-6',
+	iconName = 'mdi:link"',
+} = Astro.props;
+---
+
+<a class={className} aria-label={label}>
+	<Icon name={iconName} class={iconClass} />
+</a>

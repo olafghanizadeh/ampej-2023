@@ -1,7 +1,8 @@
 ---
-import { storyblokEditable} from '@storyblok/astro'
+import { storyblokEditable, renderRichText} from '@storyblok/astro'
 const { blok } = Astro.props
 import { YouTube } from 'astro-embed'
+const renderedRichText = await renderRichText(blok.intro)
 ---
 
 <section {...storyblokEditable(blok)}>
@@ -11,10 +12,8 @@ import { YouTube } from 'astro-embed'
 				<h1 class="text-5xl md:text-[3.50rem] font-bold leading-tighter tracking-tighter mb-4 font-heading">
 					{blok?.title}
 				</h1>
-				<div class="max-w-3xl">
-					<p class="text-xl text-gray-600 mb-8 dark:text-slate-400">
-						{blok?.intro}
-					</p>
+				<div class="max-w-3xl text-xl" set:html={renderedRichText}>
+
 				</div>
 			</div>
 			<div>
