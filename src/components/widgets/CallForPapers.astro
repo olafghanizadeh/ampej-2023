@@ -12,7 +12,7 @@ const renderedRichText = await renderRichText(blok.text, {
   resolver: (component, blok) => {
     switch (component) {
       case "button":
-        return `<a class="btn btn-primary sm:mb-0 w-full" href="${blok.link.url}">${blok.text}</a>`;
+        return `<a class="btn btn-primary w-full my-4" href="${blok.link.url}">${blok.text}</a>`;
         break;
       default:
         return `Component ${component} not found`;
@@ -27,7 +27,7 @@ const renderedRichText = await renderRichText(blok.text, {
     </h2>
     <div class="grid gap-6 row-gap-10 md:grid-cols-2 items-center">
         <div class="md:pb-6 md:pr-16">
-            <div set:html={renderedRichText}></div>
+            <div class="prose" set:html={renderedRichText}></div>
 		</div>
 		<div class="md:pb-6 md:pr-16">
 			<h3 class="mb-8 text-xl lg:text-2xl font-bold font-heading">
