@@ -48,7 +48,7 @@ export default defineConfig({
 				teaser: 'storyblok/Teaser',
 				hero: 'components/widgets/Hero',
 				keynoteSpeakers: 'components/widgets/KeynoteSpeakers',
-				comitteeMembers: 'components/widgets/ComitteeMembers',
+				comittees: 'components/widgets/Comittees',
 				keyDates: 'components/widgets/KeyDates',
 				organizers: 'components/widgets/Organizers',
 				callForPapers: 'components/widgets/CallForPapers'
