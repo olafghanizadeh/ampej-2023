@@ -14,7 +14,7 @@ import Icon from 'astro-icon';
             {comittee.members.map(({firstName, lastName, affiliation, link}) => (
               <li class="underline text-lg">
                 <a href={link.url}>
-                {lastName}, {firstName} {affiliation ? (affiliation) : ''}
+                {lastName}, {firstName} {affiliation ? `(${affiliation})` : ''}
                 <Icon class="w-6 h-6 inline" name="mdi:link" />
               </a>
               </li>
