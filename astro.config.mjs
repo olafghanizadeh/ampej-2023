@@ -51,7 +51,8 @@ export default defineConfig({
 				comittees: 'components/widgets/Comittees',
 				keyDates: 'components/widgets/KeyDates',
 				organizers: 'components/widgets/Organizers',
-				callForPapers: 'components/widgets/CallForPapers'
+				callForPapers: 'components/widgets/CallForPapers',
+				registration: 'components/widgets/Registration'
 			},
 			apiOptions: {},
 		}),
