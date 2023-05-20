@@ -52,7 +52,8 @@ export default defineConfig({
 				keyDates: 'components/widgets/KeyDates',
 				organizers: 'components/widgets/Organizers',
 				callForPapers: 'components/widgets/CallForPapers',
-				registration: 'components/widgets/Registration'
+				registration: 'components/widgets/Registration',
+				accomodations: 'components/widgets/Accomodations'
 			},
 			apiOptions: {},
 		}),

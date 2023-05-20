@@ -1,0 +1,30 @@
+---
+import { storyblokEditable} from '@storyblok/astro'
+const { blok } = Astro.props
+console.log(blok);
+const { accomodations } = blok;
+import Accomodation from './Accomodation.astro';
+
+---
+
+    <section class="bg-gray-100 dark:bg-gray-900" {...storyblokEditable(blok)} id={blok.component}>
+            <div class="container px-6 py-10 mx-auto">
+                <h2 class="font-bold leading-tighter tracking-tighter mb-4 font-heading text-center text-gray-800 capitalize lg:text-4xl dark:text-white">{blok.title}</h2>
+    
+                <p class="max-w-2xl mx-auto mt-6 text-center text-gray-500 dark:text-gray-300">
+                    {blok.text}
+                </p>
+            <div class="grid grid-cols-1 gap-8 mt-16 md:grid-cols-4">
+
+
+        {accomodations.map(({name, picture, stars}) => (
+            <Accomodation
+                name={name} 
+                picture={picture} 
+                stars={stars}
+                 />
+        ))}
+    </div>
+    <p class="text-gray-600 italic mt-8 text-center">Note: A tourist tax of 1.50€ per day may also be charged.</p>
+    </div>
+    </section>
