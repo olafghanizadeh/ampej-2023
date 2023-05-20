@@ -1,7 +1,7 @@
 ---
 import { Icon } from "astro-icon";
 import Picture from "../core/Picture.astro";
-const {name, picture, stars} = Astro.props;
+const {name, picture, stars, single, double, location, notes} = Astro.props;
 ---
 
 <div class="flex flex-col border rounded-md dark:border-gray-700">
@@ -20,6 +20,23 @@ const {name, picture, stars} = Astro.props;
             <Icon key={i} name="ic:round-star" class="w-4 h-4 inline" />
         ))}
         
-        <p class="mt-2 text-gray-500 capitalize dark:text-gray-300">{}</p>
+        <dl>
+            {single && (
+                <dt class="font-semibold">Single</dt>
+                <dd>{single} €</dd>
+            )}
+                        {double && (
+                            <dt class="font-semibold">Double</dt>
+                            <dd>{double} €</dd>
+                        )}
+                        {location && (
+                            <dt class="font-semibold">Location</dt>
+                            <dd>{location}</dd>
+                        )}
+                         {notes && (
+                            <dt class="font-semibold">Notes</dt>
+                            <dd>{notes}</dd>
+                        )}                       
+        </dl>
     </div>
 </div>

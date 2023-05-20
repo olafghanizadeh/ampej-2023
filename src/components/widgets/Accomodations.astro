@@ -17,11 +17,15 @@ import Accomodation from './Accomodation.astro';
             <div class="grid grid-cols-1 gap-8 mt-16 md:grid-cols-4">
 
 
-        {accomodations.map(({name, picture, stars}) => (
+        {accomodations.map(({name, picture, stars, single, double, location, notes}) => (
             <Accomodation
                 name={name} 
                 picture={picture} 
                 stars={stars}
+                single={single}
+                double={double}
+                location={location}
+                notes = {notes}
                  />
         ))}
     </div>
