@@ -53,7 +53,8 @@ export default defineConfig({
 				organizers: 'components/widgets/Organizers',
 				callForPapers: 'components/widgets/CallForPapers',
 				registration: 'components/widgets/Registration',
-				accomodations: 'components/widgets/Accomodations'
+				accomodations: 'components/widgets/Accomodations',
+				paymentSteps: 'components/widgets/PaymentSteps'
 			},
 			apiOptions: {},
 		}),

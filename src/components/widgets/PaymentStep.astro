@@ -1,0 +1,30 @@
+---
+const {name, picture, step, text} = Astro.props;
+import Picture from "../core/Picture.astro";
+import { RichTextSchema, renderRichText } from '@storyblok/astro'
+---
+
+
+<li class="grid grid-cols-6 md:-mx-4">
+    <div class="col-span-1">
+        <span
+            class="flex w-16 h-16 mx-auto items-center justify-center text-2xl font-bold rounded-full bg-primary-50 text-primary-600"
+        >{step}</span
+        >
+    </div>
+    <div class="px-4 col-span-5 md:col-span-3">
+        <h3 class="mb-4 text-xl font-semibold font-heading">{name}</h3>
+        <p class="text-gray-500 dark:text-gray-400" set:html={await renderRichText(text)}>
+        </p>
+    </div>
+    <div class="col-span-6 md:col-span-2 mt-6 md:mt-0">
+    <Picture
+        src={picture.filename}
+        alt={picture.alt}
+        class="object-contain w-full aspect-1/1 rounded-md shadow-md"
+        format="webp"
+        widths={[200, 400, 800]} 
+        aspectRatio="1:1" 
+        sizes="(max-width: 800px) 100vw, 800px" />
+    </div>
+</li>
