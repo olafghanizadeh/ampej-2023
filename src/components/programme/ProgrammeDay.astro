@@ -1,0 +1,23 @@
+---
+const { blok, isExcerpt } = Astro.props
+import { parse, format } from "date-fns";
+import SessionsExcerpt from './SessionsExcerpt.astro';
+import Sessions from './Sessions.astro';
+const {date, sessions} = blok;
+const parsedDate = parse(date, 'yyyy-MM-dd HH:mm', new Date());
+const prettyDate = format(parsedDate, 'EEEE, d MMMM')
+
+---
+    <div id={blok.component}>
+        {isExcerpt && (
+        <h3 class="text-3xl">{prettyDate}</h3>
+        <SessionsExcerpt sessions={sessions}/>
+        )}
+        {!isExcerpt &&(
+            <div class="col-span-2">
+                <h3 class="text-3xl text-center">{prettyDate}</h3>
+                <Sessions sessions={sessions}/>
+            </div>
+        )}
+
+    </div>

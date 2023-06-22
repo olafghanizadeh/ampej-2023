@@ -7,7 +7,6 @@ import tailwind from '@astrojs/tailwind';
 import sitemap from '@astrojs/sitemap';
 import image from '@astrojs/image';
 import mdx from '@astrojs/mdx';
-import partytown from '@astrojs/partytown';
 import storyblok from '@storyblok/astro';
 import { loadEnv } from 'vite';
 
@@ -56,6 +55,10 @@ export default defineConfig({
 				accomodations: 'components/widgets/Accomodations',
 				paymentSteps: 'components/widgets/PaymentSteps',
 				programmeWidget: 'components/widgets/ProgrammeWidget',
+				ProgrammePage: 'storyblok/ProgrammePage',
+				programmeDay: 'components/programme/ProgrammeDay',
+				sessionsExcerpt: 'components/programme/SessionsExcerpt',
+				sessions: 'components/programme/Sessions'
 			},
 			apiOptions: {},
 		}),

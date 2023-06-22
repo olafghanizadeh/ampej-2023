@@ -1,0 +1,26 @@
+---
+const { sessions } = Astro.props
+import {parse, format} from 'date-fns';
+import slugify from '@sindresorhus/slugify';
+
+const parseTime = (time) => {
+    return format(parse(time, 'yyyy-MM-dd HH:mm', new Date()), 'HH:mm')
+
+
+}
+---
+
+{sessions.map(({name, startTime, endTime, sessions: subSessions }) => (
+    <div class="text-center">
+    <p class="font-bold">{parseTime(startTime)} - {parseTime(endTime)} {name}</p>
+    <div>{subSessions.map(({title, room}) => (
+        <div id={`${slugify(title)}`}>
+
+        <h4>{title} ({room})</h4>
+    </div>
+
+    ))}</div>
+</div>
+    
+    
+))}
