@@ -54,7 +54,8 @@ export default defineConfig({
 				callForPapers: 'components/widgets/CallForPapers',
 				registration: 'components/widgets/Registration',
 				accomodations: 'components/widgets/Accomodations',
-				paymentSteps: 'components/widgets/PaymentSteps'
+				paymentSteps: 'components/widgets/PaymentSteps',
+				programmeWidget: 'components/widgets/ProgrammeWidget',
 			},
 			apiOptions: {},
 		}),
