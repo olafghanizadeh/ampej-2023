@@ -1,24 +1,19 @@
 ---
 import { storyblokEditable} from '@storyblok/astro'
-import Picture from "../core/Picture.astro";
 import Organizer from './Organizer.astro';
 const { blok } = Astro.props
-const { organizers } = blok
+const { organizers, title } = blok
 ---
 
 <section class="px-4 py-16 sm:px-6 mx-auto lg:px-8 lg:py-20 max-w-6xl" {...storyblokEditable(blok)} id={blok.component}>
 	<div class="grid gap-6 row-gap-10 md:grid-cols-1">
 		<div class="md:pb-6 md:pr-16">
 			<h2 class="mb-8 text-3xl lg:text-4xl font-bold font-heading text-center">
-				Organizers
+				{title}
 			</h2>
             <div class="flex items-center justify-center lg:justify-between flex-wrap">
             {organizers.map((item)=> (
-
                 <Organizer {...item} />
-
-
-
             ))}
         </div>
 		</div>

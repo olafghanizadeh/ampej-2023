@@ -4,7 +4,7 @@ const {name, link, logo} = Astro.props
 
 <div class="p-4">
 <a href={link.url} class="flex items-center flex-col">
-<img src={logo.filename} alt="" class="w-64 h-32">
+<img src={logo.filename} alt="" class="w-64 h-32 object-contain">
 <p>
 {name}
 </p>
