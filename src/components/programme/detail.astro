@@ -1,0 +1,6 @@
+---
+const {detail} = Astro.props;
+import { renderRichText } from '@storyblok/astro'
+---
+
+<div set:html={await renderRichText(detail)}></div>

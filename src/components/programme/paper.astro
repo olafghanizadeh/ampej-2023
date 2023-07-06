@@ -1,0 +1,9 @@
+---
+const {title, authors} = Astro.props;
+import { renderRichText } from '@storyblok/astro'
+
+
+---
+
+<h5 class="text-xl italic">{title}</h5>
+<p set:html={await renderRichText(authors)}></p>

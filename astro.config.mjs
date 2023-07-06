@@ -58,7 +58,9 @@ export default defineConfig({
 				ProgrammePage: 'storyblok/ProgrammePage',
 				programmeDay: 'components/programme/ProgrammeDay',
 				sessionsExcerpt: 'components/programme/SessionsExcerpt',
-				sessions: 'components/programme/Sessions'
+				sessions: 'components/programme/Sessions',
+				paper: 'components/programme/Paper',
+				detail: 'components/programme/Detail',
 			},
 			apiOptions: {},
 		}),

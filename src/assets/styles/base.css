@@ -42,3 +42,15 @@
 lite-youtube {
 	min-width: 720px;
 }
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+:target:before {
+    content: "";
+    display: block;
+    height: 150px;
+    margin: -150px 0 0;
+}
