@@ -2,6 +2,7 @@
 const { sessions } = Astro.props;
 import { parse, format } from 'date-fns';
 import slugify from '@sindresorhus/slugify';
+import { renderRichText } from '@storyblok/astro';
 
 const parseTime = (time) => {
     return format(parse(time, 'yyyy-MM-dd HH:mm', new Date()), 'HH:mm');
@@ -18,11 +19,16 @@ const parseTime = (time) => {
             </p>
             <div class="ml-8">
                 {subSessions.length > 1 &&
-                    subSessions.map(({ title }) => (
-                        <a class="block" href={`#${slugify(title)}`}>
-                            {title}
+                    subSessions.map((s) => (
+                        <a class="block" href={`#${slugify(s.title)}`}>
+                            {s.title}
                         </a>
                     ))}
+
+                {subSessions.length === 1 &&
+                    subSessions.map(
+                        (s) => s.details[0]?.displayInExcerpt && <p set:html={renderRichText(s.details[0].detail)} />
+                    )}
             </div>
         </>
     ))
