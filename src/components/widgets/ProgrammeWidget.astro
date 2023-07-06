@@ -1,6 +1,6 @@
 ---
 import { Icon } from 'astro-icon';
-const { blok } = Astro.props
+const { blok } = Astro.props;
 ---
 
 <section class="relative">
@@ -10,20 +10,16 @@ const { blok } = Astro.props
 				<h2 class="text-4xl md:text-4xl font-bold leading-tighter tracking-tighter mb-4 font-heading">
 					{blok.title}
 				</h2>
-				{blok.text && (
-				<p class="text-xl text-gray-600 dark:text-slate-400">
-					{blok.text}
-				</p>
-				)}
+				{blok.text && <p class="text-xl text-gray-600 dark:text-slate-400">{blok.text}</p>}
 
 				<div class="mt-6 flex gap-6 justify-center">
 					<a
-					class="btn text-white bg-primary-600 hover:bg-primary-800 mb-4 sm:mb-0"
-					href={blok.link?.url}
-					target="_blank"
-				>
-					<Icon name="tabler:link" class="w-5 h-5 mr-1 -ml-1.5" />See program
-				</a>
+						class="btn text-white bg-primary-600 hover:bg-primary-800 mb-4 sm:mb-0"
+						href={blok.link?.url}
+						target="_blank"
+					>
+						<Icon name="tabler:link" class="w-5 h-5 mr-1 -ml-1.5" />See program
+					</a>
 					<a
 						class="btn text-white bg-primary-600 hover:bg-primary-800 mb-4 sm:mb-0"
 						href={blok.PDF.filename}

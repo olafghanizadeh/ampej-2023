@@ -59,8 +59,8 @@ export default defineConfig({
 				programmeDay: 'components/programme/ProgrammeDay',
 				sessionsExcerpt: 'components/programme/SessionsExcerpt',
 				sessions: 'components/programme/Sessions',
-				paper: 'components/programme/Paper',
-				detail: 'components/programme/Detail',
+				paper: 'components/programme/paper',
+				detail: 'components/programme/detail'
 			},
 			apiOptions: {},
 		}),
