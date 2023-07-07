@@ -54,3 +54,7 @@ html {
     height: 150px;
     margin: -150px 0 0;
 }
+
+.session b {
+	font-weight: bold;
+}
